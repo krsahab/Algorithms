@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CodeFirst.Models.Photo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddPhoto")
+</p>
+<legend>Products</legend>
+@foreach (var item in Model) {
+<div class="col-md-3">
+    @Html.LabelFor(m => item.Name)
+    @Html.DisplayFor(modelItem => item.Name)
+    <img class="img-thumbnail" src="~/content/photos/@item.URL" alt="@item.URL" />
+    @Html.LabelFor(m => item.Description)
+    @Html.DisplayFor(modelItem => item.Description)
+    @Html.LabelFor(m => item.Cost)
+    @Html.DisplayFor(modelItem => item.Cost)
+
+</div>
+}
+<hr />
