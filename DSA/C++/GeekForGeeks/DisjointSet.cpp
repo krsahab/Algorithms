@@ -4,6 +4,8 @@ using namespace std;
 int *parent;
 int *rankArr;
 
+//No need to create extra rank array, store rank & parent in same array, with -ve sign to denote it is parent and value is no of child it has
+
 int find(int x)
 {
     if(parent[x]==x)
